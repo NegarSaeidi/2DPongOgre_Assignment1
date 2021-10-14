@@ -1,0 +1,48 @@
+\hypertarget{_game_8h_source}{}\doxysection{Game.\+h}
+\mbox{\hyperlink{_game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_ball_8h}{Ball.h}}"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}Ogre.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}OgreApplicationContext.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}OgreInput.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}OgreMaterial.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}OgreRTShaderSystem.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}OgreTrays.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_ball_8h}{Ball.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_bat_8h}{Bat.h}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{using namespace }Ogre;}
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }OgreBites;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_game}{Game}}}
+\DoxyCodeLine{18     : \textcolor{keyword}{public} ApplicationContext}
+\DoxyCodeLine{19     , \textcolor{keyword}{public} InputListener}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22     Ogre::SceneNode* \mbox{\hyperlink{class_game_ac14f65d54abf68fcd06f9c2b44a6d0e8}{BallNode}}, * \mbox{\hyperlink{class_game_aa504c669ecbe69437a63abdeea36589a}{batNode}};}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_ball}{Ball}}* \mbox{\hyperlink{class_game_a92bcf8f81449ab546dd97f656781d2ec}{ball}};}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_bat}{Bat}}* \mbox{\hyperlink{class_game_ab4072a6419239ae55a8be4427690c448}{bat}};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_game_aeb157cdf1053f651c3f4047331211794}{windowWidth}}, \mbox{\hyperlink{class_game_a87349cbefef195a4a58a17e4f3ced708}{windowHeight}};}
+\DoxyCodeLine{26     OgreBites::Label* \mbox{\hyperlink{class_game_a0b460b842609d48e4f22212081650112}{mScoreLabel}};}
+\DoxyCodeLine{27     OgreBites::Label* \mbox{\hyperlink{class_game_a13c9913114e1c69ce99539fed27af8f6}{mScore}};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     OgreBites::Label* \mbox{\hyperlink{class_game_a4462f931a8377f644541cffbf642fccd}{mLivesLabel}};}
+\DoxyCodeLine{30     OgreBites::Label* \mbox{\hyperlink{class_game_a72793df0c619973aeaf69d186ed2b94d}{mLives}};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     OgreBites::Label* \mbox{\hyperlink{class_game_a456e427e9b5fb34131c2393f7d597d31}{mFpsLabel}};}
+\DoxyCodeLine{33     OgreBites::Label* \mbox{\hyperlink{class_game_abcab5d026cc9bd7c5f591bf03d99cb17}{mFps}};}
+\DoxyCodeLine{34     OgreBites::Label* \mbox{\hyperlink{class_game_a336ffd0a74f4415b151ab6a06ac7fb74}{mTpuLabel}};}
+\DoxyCodeLine{35     OgreBites::Label* \mbox{\hyperlink{class_game_a95305336fbf88109da44e1fd4d44384b}{mTpu}};}
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}}();}
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_game_a72772b628443c3675976d6b5e6c9ec2a}{\string~Game}}() \{\}}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_ae4618ba40eabbbe65e35f1bb239aa29b}{setup}}();}
+\DoxyCodeLine{40     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_game_a2ba00c3475d222573e5ad54b88b389b7}{keyPressed}}(\textcolor{keyword}{const} KeyboardEvent\& evt);}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_af5b56d4ec80bba41a21763b66603c0da}{createFrameListener}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \};}
+
+\end{DoxyCode}

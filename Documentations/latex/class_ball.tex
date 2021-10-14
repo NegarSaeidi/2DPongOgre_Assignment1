@@ -1,0 +1,179 @@
+\hypertarget{class_ball}{}\doxysection{Ball Class Reference}
+\label{class_ball}\index{Ball@{Ball}}
+
+
+{\ttfamily \#include $<$Ball.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ball_a86a144d3dad6c953e422e32435923bbb}{Ball}} ()
+\item 
+\mbox{\hyperlink{class_ball_a20f2f6ac0bf648f406a8e12e63429fcd}{$\sim$\+Ball}} ()
+\item 
+\mbox{\hyperlink{class_ball}{Ball}} $\ast$ \mbox{\hyperlink{class_ball_a8e0c0005689441a0100d29dc2c7917b5}{get\+Ball}} ()
+\item 
+Vector3 \mbox{\hyperlink{class_ball_aa5d47b9f851737c20cdc0df5084356be}{get\+Position}} ()
+\item 
+Vector3 \mbox{\hyperlink{class_ball_ae25a290c7f7b414b6b6492ff3fb1d3e0}{get\+Scale}} ()
+\item 
+Manual\+Object $\ast$ \mbox{\hyperlink{class_ball_a914d9af31e48653ddf9d498c861c1f1f}{get\+Shape}} (Manual\+Object $\ast$obj)
+\item 
+float \mbox{\hyperlink{class_ball_a05e14494b722d7d34dc429cbb59318c7}{get\+XVelocity}} ()
+\item 
+float \mbox{\hyperlink{class_ball_a44733c0708d6650a9dab9dcdb39ec91a}{get\+YVelocity}} ()
+\item 
+void \mbox{\hyperlink{class_ball_a23eab824e80a61b78a5290ce7e93addc}{update}} (Scene\+Node $\ast$node)
+\item 
+void \mbox{\hyperlink{class_ball_a4ea07fba4fdb40ebec9f60e293ef19de}{is\+Colliding}} (bool b)
+\item 
+bool \mbox{\hyperlink{class_ball_a4be8735c0be8984a0e7cde8b7f5d4b34}{get\+Lose}} ()
+\item 
+void \mbox{\hyperlink{class_ball_a941a95594e5ec9354302b566223d78db}{set\+Lose}} (bool b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_ball_a9022c8f2dd7caca53ab33df65da1bd85}{ball\+Shape}}
+\item 
+Vector3 \mbox{\hyperlink{class_ball_a4c4fdea5f5004cd0cd30cb93194091e7}{position}}
+\item 
+Vector3 \mbox{\hyperlink{class_ball_af1c354f13022e5f6ed07c3e591582a91}{scale}}
+\item 
+float \mbox{\hyperlink{class_ball_a15b57872c201dca88f4ad290338c76e8}{XVelocity}}
+\item 
+float \mbox{\hyperlink{class_ball_af4278a7ea66ce0c3e30dc6fd7bd60821}{YVelocity}}
+\item 
+bool \mbox{\hyperlink{class_ball_aa1eb52af0c5db89281e0e923da171e1f}{Collide}}
+\item 
+bool \mbox{\hyperlink{class_ball_a88cfe91bc1d39c44cae465a942f56da4}{Lose}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ball_a86a144d3dad6c953e422e32435923bbb}\label{class_ball_a86a144d3dad6c953e422e32435923bbb}} 
+\index{Ball@{Ball}!Ball@{Ball}}
+\index{Ball@{Ball}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{Ball()}{Ball()}}
+{\footnotesize\ttfamily Ball\+::\+Ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_ball_a20f2f6ac0bf648f406a8e12e63429fcd}\label{class_ball_a20f2f6ac0bf648f406a8e12e63429fcd}} 
+\index{Ball@{Ball}!````~Ball@{$\sim$Ball}}
+\index{````~Ball@{$\sim$Ball}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{$\sim$Ball()}{~Ball()}}
+{\footnotesize\ttfamily Ball\+::$\sim$\+Ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ball_a8e0c0005689441a0100d29dc2c7917b5}\label{class_ball_a8e0c0005689441a0100d29dc2c7917b5}} 
+\index{Ball@{Ball}!getBall@{getBall}}
+\index{getBall@{getBall}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getBall()}{getBall()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ball}{Ball}} $\ast$ Ball\+::get\+Ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_ball_a4be8735c0be8984a0e7cde8b7f5d4b34}\label{class_ball_a4be8735c0be8984a0e7cde8b7f5d4b34}} 
+\index{Ball@{Ball}!getLose@{getLose}}
+\index{getLose@{getLose}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getLose()}{getLose()}}
+{\footnotesize\ttfamily bool Ball\+::get\+Lose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_ball_aa5d47b9f851737c20cdc0df5084356be}\label{class_ball_aa5d47b9f851737c20cdc0df5084356be}} 
+\index{Ball@{Ball}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily Vector3 Ball\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_ball_ae25a290c7f7b414b6b6492ff3fb1d3e0}\label{class_ball_ae25a290c7f7b414b6b6492ff3fb1d3e0}} 
+\index{Ball@{Ball}!getScale@{getScale}}
+\index{getScale@{getScale}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily Vector3 Ball\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_ball_a914d9af31e48653ddf9d498c861c1f1f}\label{class_ball_a914d9af31e48653ddf9d498c861c1f1f}} 
+\index{Ball@{Ball}!getShape@{getShape}}
+\index{getShape@{getShape}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getShape()}{getShape()}}
+{\footnotesize\ttfamily Manual\+Object $\ast$ Ball\+::get\+Shape (\begin{DoxyParamCaption}\item[{Manual\+Object $\ast$}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_ball_a05e14494b722d7d34dc429cbb59318c7}\label{class_ball_a05e14494b722d7d34dc429cbb59318c7}} 
+\index{Ball@{Ball}!getXVelocity@{getXVelocity}}
+\index{getXVelocity@{getXVelocity}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getXVelocity()}{getXVelocity()}}
+{\footnotesize\ttfamily float Ball\+::get\+XVelocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_ball_a44733c0708d6650a9dab9dcdb39ec91a}\label{class_ball_a44733c0708d6650a9dab9dcdb39ec91a}} 
+\index{Ball@{Ball}!getYVelocity@{getYVelocity}}
+\index{getYVelocity@{getYVelocity}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getYVelocity()}{getYVelocity()}}
+{\footnotesize\ttfamily float Ball\+::get\+YVelocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_ball_a4ea07fba4fdb40ebec9f60e293ef19de}\label{class_ball_a4ea07fba4fdb40ebec9f60e293ef19de}} 
+\index{Ball@{Ball}!isColliding@{isColliding}}
+\index{isColliding@{isColliding}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{isColliding()}{isColliding()}}
+{\footnotesize\ttfamily void Ball\+::is\+Colliding (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_ball_a941a95594e5ec9354302b566223d78db}\label{class_ball_a941a95594e5ec9354302b566223d78db}} 
+\index{Ball@{Ball}!setLose@{setLose}}
+\index{setLose@{setLose}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{setLose()}{setLose()}}
+{\footnotesize\ttfamily void Ball\+::set\+Lose (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_ball_a23eab824e80a61b78a5290ce7e93addc}\label{class_ball_a23eab824e80a61b78a5290ce7e93addc}} 
+\index{Ball@{Ball}!update@{update}}
+\index{update@{update}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Ball\+::update (\begin{DoxyParamCaption}\item[{Scene\+Node $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_ball_a9022c8f2dd7caca53ab33df65da1bd85}\label{class_ball_a9022c8f2dd7caca53ab33df65da1bd85}} 
+\index{Ball@{Ball}!ballShape@{ballShape}}
+\index{ballShape@{ballShape}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{ballShape}{ballShape}}
+{\footnotesize\ttfamily string Ball\+::ball\+Shape\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_ball_aa1eb52af0c5db89281e0e923da171e1f}\label{class_ball_aa1eb52af0c5db89281e0e923da171e1f}} 
+\index{Ball@{Ball}!Collide@{Collide}}
+\index{Collide@{Collide}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{Collide}{Collide}}
+{\footnotesize\ttfamily bool Ball\+::\+Collide\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_ball_a88cfe91bc1d39c44cae465a942f56da4}\label{class_ball_a88cfe91bc1d39c44cae465a942f56da4}} 
+\index{Ball@{Ball}!Lose@{Lose}}
+\index{Lose@{Lose}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{Lose}{Lose}}
+{\footnotesize\ttfamily bool Ball\+::\+Lose\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_ball_a4c4fdea5f5004cd0cd30cb93194091e7}\label{class_ball_a4c4fdea5f5004cd0cd30cb93194091e7}} 
+\index{Ball@{Ball}!position@{position}}
+\index{position@{position}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily Vector3 Ball\+::position\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_ball_af1c354f13022e5f6ed07c3e591582a91}\label{class_ball_af1c354f13022e5f6ed07c3e591582a91}} 
+\index{Ball@{Ball}!scale@{scale}}
+\index{scale@{scale}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily Vector3 Ball\+::scale\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_ball_a15b57872c201dca88f4ad290338c76e8}\label{class_ball_a15b57872c201dca88f4ad290338c76e8}} 
+\index{Ball@{Ball}!XVelocity@{XVelocity}}
+\index{XVelocity@{XVelocity}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{XVelocity}{XVelocity}}
+{\footnotesize\ttfamily float Ball\+::\+XVelocity\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_ball_af4278a7ea66ce0c3e30dc6fd7bd60821}\label{class_ball_af4278a7ea66ce0c3e30dc6fd7bd60821}} 
+\index{Ball@{Ball}!YVelocity@{YVelocity}}
+\index{YVelocity@{YVelocity}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{YVelocity}{YVelocity}}
+{\footnotesize\ttfamily float Ball\+::\+YVelocity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_ball_8h}{Ball.\+h}}\item 
+\mbox{\hyperlink{_ball_8cpp}{Ball.\+cpp}}\end{DoxyCompactItemize}
