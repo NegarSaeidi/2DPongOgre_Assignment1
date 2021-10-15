@@ -41,5 +41,5 @@ F:\T163-Term5\Hooman-Engine\ogre-sdk-v2.1\OgreMain\Include\OgreTextureManager.h(
 F:\T163-Term5\Hooman-Engine\ogre-sdk-v2.1\OgreMain\Include\OgreTextureManager.h(438): message : see declaration of 'std::map<Ogre::String,Ogre::SamplerPtr,std::less<Ogre::String>,std::allocator<std::pair<const Ogre::String,Ogre::SamplerPtr>>>'
 F:\T163-Term5\Hooman-Engine\ogre-sdk-v2.1\OgreMain\Include\OgreTimer.h(41,52): warning C4251: 'Ogre::Timer::start': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>' needs to have dll-interface to be used by clients of class 'Ogre::Timer'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\chrono(603): message : see declaration of 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>'
-F:\T163-Term5\Hooman-Engine\2DPongOgre_Assignment1\Ball.cpp(66,21): warning C4305: '-=': truncation from 'double' to 'float'
+F:\T163-Term5\Hooman-Engine\2DPongOgre_Assignment1\Ball.cpp(68,21): warning C4305: '-=': truncation from 'double' to 'float'
   OrgreTemplateV2.vcxproj -> F:\T163-Term5\Hooman-Engine\2DPongOgre_Assignment1\OrgreTemplateV2\x64\Debug\OrgreTemplateV2.exe

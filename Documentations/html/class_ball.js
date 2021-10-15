@@ -3,6 +3,7 @@ var class_ball =
     [ "Ball", "class_ball.html#a86a144d3dad6c953e422e32435923bbb", null ],
     [ "~Ball", "class_ball.html#a20f2f6ac0bf648f406a8e12e63429fcd", null ],
     [ "getBall", "class_ball.html#a8e0c0005689441a0100d29dc2c7917b5", null ],
+    [ "getIsColliding", "class_ball.html#a17797c43548b3671ba9c0c2d24c847fc", null ],
     [ "getLose", "class_ball.html#a4be8735c0be8984a0e7cde8b7f5d4b34", null ],
     [ "getPosition", "class_ball.html#aa5d47b9f851737c20cdc0df5084356be", null ],
     [ "getScale", "class_ball.html#ae25a290c7f7b414b6b6492ff3fb1d3e0", null ],
@@ -14,9 +15,12 @@ var class_ball =
     [ "update", "class_ball.html#a23eab824e80a61b78a5290ce7e93addc", null ],
     [ "ballShape", "class_ball.html#a9022c8f2dd7caca53ab33df65da1bd85", null ],
     [ "Collide", "class_ball.html#aa1eb52af0c5db89281e0e923da171e1f", null ],
+    [ "height", "class_ball.html#a860cf4c6a94a142b4dd64215d1d09a74", null ],
     [ "Lose", "class_ball.html#a88cfe91bc1d39c44cae465a942f56da4", null ],
+    [ "maxSpeed", "class_ball.html#ab5aef34384a54bc1927753064c1e0f83", null ],
     [ "position", "class_ball.html#a4c4fdea5f5004cd0cd30cb93194091e7", null ],
     [ "scale", "class_ball.html#af1c354f13022e5f6ed07c3e591582a91", null ],
+    [ "width", "class_ball.html#a41a2d028190adb651318d87f5253e266", null ],
     [ "XVelocity", "class_ball.html#a15b57872c201dca88f4ad290338c76e8", null ],
     [ "YVelocity", "class_ball.html#af4278a7ea66ce0c3e30dc6fd7bd60821", null ]
 ];

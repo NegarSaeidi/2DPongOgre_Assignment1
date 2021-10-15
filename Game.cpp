@@ -26,8 +26,12 @@ using namespace OgreBites;
 Ogre::Vector3 translate(0, 0, 0);
 int scoreNumber = 0;
 int livesnumber = 3;
-//GameFrameListener class
 
+
+//GameFrameListener class
+/**
+* Works as the update function
+*/
 class GameFrameListener : public Ogre::FrameListener
 {
 private:
@@ -56,8 +60,8 @@ public:
     //Used as the update function
     bool frameStarted(const Ogre::FrameEvent& evt)
     {
-        const auto batCollider = _BatNode->_getWorldAABB();
-        const auto ballCollider = _BallNode->_getWorldAABB();
+        const auto& batCollider = _BatNode->_getWorldAABB();
+        const auto& ballCollider = _BallNode->_getWorldAABB();
 
         _timeLabel->setCaption(Ogre::StringConverter::toString(evt.timeSinceLastFrame));
         if (!dead)
@@ -85,14 +89,15 @@ public:
        
          
            
-           if((_BallNode->getPosition().x<= batCollider.getMaximum().x)&&
-               (_BallNode->getPosition().x >= batCollider.getMinimum().x) &&
-               (_BallNode->getPosition().y <= batCollider.getMaximum().y) &&
-               (_BallNode->getPosition().y >= batCollider.getMinimum().y))
+           if((ballCollider.getMaximum().x<= batCollider.getMaximum().x)&&
+               (ballCollider.getMinimum().x >= batCollider.getMinimum().x) &&
+               (ballCollider.getMaximum().y >= batCollider.getMaximum().y) &&
+               (ballCollider.getMinimum().y <= batCollider.getMaximum().y))
                
             {
                if (!_ballInstance->getIsColliding())
                {
+                
                    _ballInstance->isColliding(true);
 
                    scoreNumber++;
@@ -102,6 +107,8 @@ public:
             }
            else
            {
+             
+              
                _ballInstance->isColliding(false);
            }
             translate.x = _ballInstance->getXVelocity();
@@ -147,7 +154,7 @@ void Game::setup()
     
     scnMgr->setAmbientLight(ColourValue(0.5, 0.5, 0.5));
     
-
+    //light
    
     Light* light = scnMgr->createLight("MainLight");
     SceneNode* lightNode = scnMgr->getRootSceneNode()->createChildSceneNode();
@@ -156,11 +163,11 @@ void Game::setup()
 
   
     lightNode->setPosition(20, 80, 50);
-   
+    //Create camera
    
     SceneNode* camNode = scnMgr->getRootSceneNode()->createChildSceneNode();
 
-   //Create camera
+   
     Camera* cam = scnMgr->createCamera("myCam");
     cam->setNearClipDistance(5); 
     cam->setAutoAspectRatio(true);

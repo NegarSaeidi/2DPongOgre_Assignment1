@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['windowheight_0',['windowHeight',['../class_game.html#a87349cbefef195a4a58a17e4f3ced708',1,'Game']]],
-  ['windowwidth_1',['windowWidth',['../class_game.html#aeb157cdf1053f651c3f4047331211794',1,'Game']]]
+  ['scale_0',['scale',['../class_ball.html#af1c354f13022e5f6ed07c3e591582a91',1,'Ball']]],
+  ['scorenumber_1',['scoreNumber',['../_game_8cpp.html#a287ad575610b3452376f67fabe1b11bc',1,'Game.cpp']]]
 ];

@@ -9,6 +9,7 @@ public:
 	Bat();
 	~Bat();
 	Vector3 getPosition();
+
 	ManualObject* getShape(ManualObject* obj);
 	void moveLeft(SceneNode* node);
 	void moveRight(SceneNode* node);

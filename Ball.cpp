@@ -4,11 +4,11 @@
 * 
 */
 #include "Ball.h"
-
+#include <iostream>
 Ball::Ball() :ballShape("circle"), position(20, 100, 0), scale(0.2f, 0.05f, 1.0f), XVelocity(35.0f), YVelocity(35.0f), Collide(false), Lose(false)
 {
     width = 120.0f;
-    height = 138.0f;
+    height = 135.0f;
     maxSpeed = 50.0f;
 }
 Ball::~Ball()
@@ -64,46 +64,50 @@ float Ball::getYVelocity()
 //Checks for boundries collision
 void Ball::update(SceneNode* node)
 {
-  
+
     XVelocity -= 0.1;
     if (Math::Abs(YVelocity) < 1)
         YVelocity = -20;
     else
-    YVelocity -= 1;
-   
-    if (node->getPosition().x < -width  || node->getPosition().x > width)
+        YVelocity -= 1;
+
+    if (node->getPosition().x < -width || node->getPosition().x > width)
     {
         XVelocity = -XVelocity;
-      
+
     }
-    if  ( Math::Abs(node->getPosition().y+8-height)<1 )
+    if (node->getPosition().y + 8>height )
     {
         YVelocity = -YVelocity;
-      
-      
+
+
     }
-     if (Collide)
+    if (Collide)
     {
-        if(YVelocity<0  && Math::Abs(YVelocity<60))
-        YVelocity = (-1*YVelocity)+5;
-        else if (YVelocity > 0 && Math::Abs(YVelocity < 60))
-                YVelocity = -(YVelocity + 5);
- 
-       // Collide = false;
         
+        if (YVelocity < 0 && Math::Abs(YVelocity < 60))
+            YVelocity = (-1 * YVelocity) + 5;
+        else if (YVelocity > 0 && Math::Abs(YVelocity < 60))
+            YVelocity = -(YVelocity + 5);
+
+        // Collide = false;
+
     }
-   if (node->getPosition().y < -48)
+    if (node->getPosition().y < -48)
     {
         Lose = true;
-        XVelocity = 55.0;
+        XVelocity = 35.0;
         YVelocity = -20;
     }
-  
-  
+    if (Math::Abs(YVelocity - 10) < 1)
+    {
+        YVelocity = -20;
+    }
 
-        
+
+
+
 }
-
 void Ball::isColliding(bool b)
 {
     Collide = b;

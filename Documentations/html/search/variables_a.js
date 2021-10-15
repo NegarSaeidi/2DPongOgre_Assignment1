@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yvelocity_0',['YVelocity',['../class_ball.html#af4278a7ea66ce0c3e30dc6fd7bd60821',1,'Ball']]]
+  ['xvelocity_0',['XVelocity',['../class_ball.html#a15b57872c201dca88f4ad290338c76e8',1,'Ball']]]
 ];

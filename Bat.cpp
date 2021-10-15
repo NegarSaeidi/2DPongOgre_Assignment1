@@ -18,6 +18,8 @@ Vector3 Bat::getPosition()
 	return position;
 }
 
+
+
 ManualObject* Bat::getShape(ManualObject* obj)
 {
     obj->begin("FlatVertexColour",

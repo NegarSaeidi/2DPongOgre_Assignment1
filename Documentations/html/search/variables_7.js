@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['scale_0',['scale',['../class_ball.html#af1c354f13022e5f6ed07c3e591582a91',1,'Ball']]],
-  ['scorenumber_1',['scoreNumber',['../_game_8cpp.html#a287ad575610b3452376f67fabe1b11bc',1,'Game.cpp']]]
+  ['position_0',['position',['../class_ball.html#a4c4fdea5f5004cd0cd30cb93194091e7',1,'Ball::position()'],['../class_bat.html#a446c8dcae0d670d7ba792bf43c298375',1,'Bat::position()']]]
 ];
