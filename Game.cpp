@@ -84,19 +84,26 @@ public:
             }
        
          
-            if(!_ballInstance->getIsColliding())
+           
            if((_BallNode->getPosition().x<= batCollider.getMaximum().x)&&
                (_BallNode->getPosition().x >= batCollider.getMinimum().x) &&
                (_BallNode->getPosition().y <= batCollider.getMaximum().y) &&
                (_BallNode->getPosition().y >= batCollider.getMinimum().y))
                
             {
-                _ballInstance->isColliding(true);
-               
-                scoreNumber++;
-                _scLabel->setCaption(Ogre::StringConverter::toString(scoreNumber));
+               if (!_ballInstance->getIsColliding())
+               {
+                   _ballInstance->isColliding(true);
+
+                   scoreNumber++;
+                   _scLabel->setCaption(Ogre::StringConverter::toString(scoreNumber));
+               }
 
             }
+           else
+           {
+               _ballInstance->isColliding(false);
+           }
             translate.x = _ballInstance->getXVelocity();
 
             translate.y = _ballInstance->getYVelocity();
@@ -250,7 +257,7 @@ bool Game::keyPressed(const KeyboardEvent& evt)
             bat->moveLeft(batNode);
         break;
     case 'd':
-        if (batNode->getPosition().x + 40 < 122)
+        if (batNode->getPosition().x +42 < 122)
             bat->moveRight(batNode);
         break;
 

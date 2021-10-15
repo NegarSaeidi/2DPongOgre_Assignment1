@@ -26,9 +26,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Ball.h" />
     <ClInclude Include="..\Bat.h" />
     <ClInclude Include="..\Game.h" />
-    <ClInclude Include="Ball.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
