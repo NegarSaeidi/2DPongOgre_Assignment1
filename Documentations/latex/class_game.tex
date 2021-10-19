@@ -14,15 +14,15 @@ Inheritance diagram for Game\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constuctor, sets up a commmon context for application. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_game_a72772b628443c3675976d6b5e6c9ec2a}{$\sim$\+Game}} ()
 \item 
 void \mbox{\hyperlink{class_game_ae4618ba40eabbbe65e35f1bb239aa29b}{setup}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em In this function, scene elements get created, like lights , camera, tray\+Manager, hud... \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_game_a2ba00c3475d222573e5ad54b88b389b7}{key\+Pressed}} (const Keyboard\+Event \&evt)
-\item 
+\begin{DoxyCompactList}\small\item\em keyboard event handler, handling A and D keys \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_af5b56d4ec80bba41a21763b66603c0da}{create\+Frame\+Listener}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function creates a new game frame listener instance and adds it to the scene root. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -63,6 +63,13 @@ Ogre\+Bites\+::\+Label $\ast$ \mbox{\hyperlink{class_game_a95305336fbf88109da44e
 \doxysubsubsection{\texorpdfstring{Game()}{Game()}}
 {\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Constuctor, sets up a commmon context for application. 
+
+\begin{DoxyReturn}{Returns}
+no return 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_game_a72772b628443c3675976d6b5e6c9ec2a}\label{class_game_a72772b628443c3675976d6b5e6c9ec2a}} 
 \index{Game@{Game}!````~Game@{$\sim$Game}}
 \index{````~Game@{$\sim$Game}!Game@{Game}}
@@ -78,18 +85,54 @@ Ogre\+Bites\+::\+Label $\ast$ \mbox{\hyperlink{class_game_a95305336fbf88109da44e
 \doxysubsubsection{\texorpdfstring{createFrameListener()}{createFrameListener()}}
 {\footnotesize\ttfamily void Game\+::create\+Frame\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+This function creates a new game frame listener instance and adds it to the scene root. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_game_a2ba00c3475d222573e5ad54b88b389b7}\label{class_game_a2ba00c3475d222573e5ad54b88b389b7}} 
 \index{Game@{Game}!keyPressed@{keyPressed}}
 \index{keyPressed@{keyPressed}!Game@{Game}}
 \doxysubsubsection{\texorpdfstring{keyPressed()}{keyPressed()}}
 {\footnotesize\ttfamily bool Game\+::key\+Pressed (\begin{DoxyParamCaption}\item[{const Keyboard\+Event \&}]{evt }\end{DoxyParamCaption})}
 
+
+
+keyboard event handler, handling A and D keys 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Keyboard\+Event\& evt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_game_ae4618ba40eabbbe65e35f1bb239aa29b}\label{class_game_ae4618ba40eabbbe65e35f1bb239aa29b}} 
 \index{Game@{Game}!setup@{setup}}
 \index{setup@{setup}!Game@{Game}}
 \doxysubsubsection{\texorpdfstring{setup()}{setup()}}
 {\footnotesize\ttfamily void Game\+::setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+In this function, scene elements get created, like lights , camera, tray\+Manager, hud... 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}

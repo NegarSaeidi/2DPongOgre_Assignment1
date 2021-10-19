@@ -1,30 +1,61 @@
-  /*
-* Ball class
-* Circle shape
-* 
+
+/**
+* <summary>
+* Ball class - have checkCollision, checkBounds, move functions
+* Creates the shape of the ball
+*</summary>
 */
 #include "Ball.h"
 #include <iostream>
-Ball::Ball() :ballShape("circle"), position(20, 100, 0), scale(0.2f, 0.05f, 1.0f), XVelocity(35.0f), YVelocity(35.0f), Collide(false), Lose(false)
+
+/**
+ * Constructor
+ * Initializes the class variables
+ * @return no return
+ */
+
+Ball::Ball() :ballShape("circle"), position(100, 100, 0), scale(0.2f, 0.05f, 1.0f), XVelocity(50.0f), YVelocity(50.0f), Collide(false), Lose(false)
 {
-    width = 120.0f;
-    height = 135.0f;
+    ScreenWidth = 120.0f;
+    ScreenHeight = 133.0f;
+    radius = 8;
+    batWidth = 40;
+    batHeight = 12;
     maxSpeed = 50.0f;
 }
 Ball::~Ball()
 {
 }
-
+/**
+ *Returns the current instance of this class
+ * @param None
+ * @return Ball*
+ */
 Ball* Ball::getBall()
 {
     return this;
 }
 
+/**
+ * returns the position of this instance
+ * @param None.
+ * @return Vector3
+ */
 
-//returns ball's position
+
 Vector3 Ball::getPosition()
 {
     return position;
+}
+
+/**
+ *If the object is colliding with the bat this function sets the Collide variable to true
+ * @param None
+ * @return bool
+ */
+bool Ball::getIsColliding()
+{
+    return Collide;
 }
 
 Vector3 Ball::getScale()
@@ -32,7 +63,102 @@ Vector3 Ball::getScale()
     return scale;
 }
 
-//Creates the shape of the ball
+/**
+ * Checks to see if the ball is colliding with the bat.
+ * @param SceneNode* bat.
+ * @param SceneNode* ball
+ * @return void
+ */
+
+void Ball::checkCollision(SceneNode* bat, SceneNode* ball)
+{
+  
+    if (((ball->getPosition().x >= bat->getPosition().x) &&
+        (ball->getPosition().x + radius <= bat->getPosition().x + batWidth) &&
+        (ball->getPosition().y <= bat->getPosition().y + batHeight) &&
+        (ball->getPosition().y + radius >= bat->getPosition().y + batHeight)) ||
+
+        ((ball->getPosition().x + radius >= bat->getPosition().x) &&
+            (ball->getPosition().x <= bat->getPosition().x) &&
+            (ball->getPosition().y <= bat->getPosition().y + batHeight) &&
+            (ball->getPosition().y + radius >= bat->getPosition().y + batHeight)) ||
+
+        ((ball->getPosition().x <= bat->getPosition().x + batWidth) &&
+            (ball->getPosition().x + radius >= bat->getPosition().x + batWidth) &&
+            (ball->getPosition().y <= bat->getPosition().y + batHeight) &&
+            (ball->getPosition().y + radius >= bat->getPosition().y + batHeight)))
+    {
+
+        YVelocity = (-1 * YVelocity) + maxSpeed;
+        Collide = true;
+
+
+    }
+    else
+        Collide = false;
+}
+
+/**
+ * moves the ball based on time
+ * @param SceneNode* ball
+ * @param Ogre::Real time
+ * @return void
+ */
+
+
+void Ball::move(SceneNode* ball, Ogre::Real time)
+{
+    Vector3 tempVel;
+    tempVel.x = XVelocity;
+    tempVel.y = YVelocity;
+    tempVel.z = 0;
+    ball->translate(tempVel * time);
+}
+
+/**
+ * Checks to see if the ball is colliding with edges.
+ * @param SceneNode* ball.
+ * @return void
+ */
+
+
+void Ball::checkBound(SceneNode* ball)
+{
+    if (ball->getPosition().y + radius >= ScreenHeight)
+    {
+
+        YVelocity = -1 * (YVelocity + 10);
+
+    }
+    else if (ball->getPosition().x < -ScreenWidth || ball->getPosition().x+radius > ScreenWidth)
+    {
+
+        if (XVelocity > 0)
+            XVelocity = -1 * (XVelocity + 10);
+        else
+            XVelocity = (-1 * XVelocity) + 10;
+
+    }
+
+
+    if (ball->getPosition().y < -48)
+    {
+        Lose = true;
+        XVelocity = 35.0;
+        YVelocity = 35.0;
+    }
+
+
+
+}
+
+/**
+ * Creates the circular shape of the object
+ * @param ManualObject* obj
+ * @return ManualObject*
+ */
+
+
 ManualObject* Ball::getShape(ManualObject* obj)
 {
     float const radius = 4;
@@ -41,7 +167,7 @@ ManualObject* Ball::getShape(ManualObject* obj)
     obj->begin("FlatVertexColour", RenderOperation::OT_TRIANGLE_FAN);
     for (float theta = 0; theta <= 2 * Math::PI; theta += Math::PI / accuracy)
     {
-        obj->colour(ColourValue(0.0f, 0.0f, 1.0f, 1.0f));
+        obj->colour(ColourValue(0.0f, 0.0f, 0.2f, 1.0f));
         obj->position(radius * Math::Cos(theta), radius * Math::Sin(theta), 0);
         index++;
 
@@ -50,73 +176,68 @@ ManualObject* Ball::getShape(ManualObject* obj)
     obj->end();
     return obj;
 }
-//returns ball's velocity in X direction
+
+/**
+ * Returns the velocity of the object in X axis
+ * @param None
+ * @return float
+ */
+
+
 float Ball::getXVelocity()
 {
     return XVelocity;
 }
-//returns ball's velocity in Y direction
+
+/**
+ * Returns the velocity of the object in Y axis
+ * @param None
+ * @return float
+ */
+
 float Ball::getYVelocity()
 {
     return YVelocity;
 }
-//Updates ball's velocity
-//Checks for boundries collision
-void Ball::update(SceneNode* node)
+
+/**
+ * updates the velocity of object per frame, calls the checkCollision, checkBound and move functions
+ * @param SceneNode* ball
+  * @param SceneNode* bat
+  * @param Ogre::Real time
+ * @return void
+ */
+
+void Ball::update(SceneNode* ball, SceneNode* bat, Ogre::Real time)
 {
 
-    XVelocity -= 0.1;
-    if (Math::Abs(YVelocity) < 1)
-        YVelocity = -20;
-    else
-        YVelocity -= 1;
 
-    if (node->getPosition().x < -width || node->getPosition().x > width)
+    if (Math::Abs(YVelocity) >= maxSpeed)
     {
-        XVelocity = -XVelocity;
-
+        if (YVelocity > 0)
+            YVelocity -= 0.5;
+        else
+            YVelocity += 0.5;
     }
-    if (node->getPosition().y + 8>height )
+    if (Math::Abs(XVelocity) >= maxSpeed)
     {
-        YVelocity = -YVelocity;
-
-
+        if (XVelocity > 0)
+            XVelocity -= 0.5;
+        else
+            XVelocity += 0.5;
     }
-    if (Collide)
-    {
-        
-        if (YVelocity < 0 && Math::Abs(YVelocity < 60))
-            YVelocity = (-1 * YVelocity) + 5;
-        else if (YVelocity > 0 && Math::Abs(YVelocity < 60))
-            YVelocity = -(YVelocity + 5);
-
-        // Collide = false;
-
-    }
-    if (node->getPosition().y < -48)
-    {
-        Lose = true;
-        XVelocity = 35.0;
-        YVelocity = -20;
-    }
-    if (Math::Abs(YVelocity - 10) < 1)
-    {
-        YVelocity = -20;
-    }
+    if (Math::Abs(YVelocity) < 1.5)
+        YVelocity = -35;
+    checkCollision(bat, ball);
+    checkBound(ball);
+    move(ball, time);
 
 
 
 
 }
-void Ball::isColliding(bool b)
-{
-    Collide = b;
-}
 
-bool Ball::getIsColliding()
-{
-    return Collide;
-}
+
 
 bool Ball::getLose()
 {

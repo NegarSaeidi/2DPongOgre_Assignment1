@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['translate_0',['translate',['../_game_8cpp.html#a9dc3000fb9502d0b61f54faefe66f72c',1,'Game.cpp']]]
+  ['update_0',['update',['../class_ball.html#a74dd5825709f495d8abfb6bcb323ead4',1,'Ball']]]
 ];

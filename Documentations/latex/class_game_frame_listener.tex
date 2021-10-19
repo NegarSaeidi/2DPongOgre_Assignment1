@@ -1,5 +1,10 @@
 \hypertarget{class_game_frame_listener}{}\doxysection{Game\+Frame\+Listener Class Reference}
 \label{class_game_frame_listener}\index{GameFrameListener@{GameFrameListener}}
+
+
+Game\+Frame Listener class, for listening to the events that occur each frame.  
+
+
 Inheritance diagram for Game\+Frame\+Listener\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,7 +17,7 @@ Inheritance diagram for Game\+Frame\+Listener\+:\begin{figure}[H]
 \mbox{\hyperlink{class_game_frame_listener_a8ff619e2059160a8f309b76d43d595d2}{Game\+Frame\+Listener}} (Ogre\+::\+Scene\+Node $\ast$bat\+Node, Ogre\+::\+Scene\+Node $\ast$ball\+Node, \mbox{\hyperlink{class_ball}{Ball}} $\ast$temp\+Ball, Ogre\+Bites\+::\+Label $\ast$Live, Ogre\+Bites\+::\+Label $\ast$sc, Ogre\+Bites\+::\+Label $\ast$time)
 \item 
 bool \mbox{\hyperlink{class_game_frame_listener_a79a5435ff5069071435a9a582701a688}{frame\+Started}} (const Ogre\+::\+Frame\+Event \&evt)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used as the update function, calls the update function of the ball, check for the lose condition, update the huds. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,11 +33,12 @@ Ogre\+Bites\+::\+Label $\ast$ \mbox{\hyperlink{class_game_frame_listener_ac32f97
 \item 
 Ogre\+Bites\+::\+Label $\ast$ \mbox{\hyperlink{class_game_frame_listener_a181e99eb230af6d5b45ff66ff462ae0e}{\+\_\+time\+Label}}
 \item 
-Ogre\+Bites\+::\+Label $\ast$ \mbox{\hyperlink{class_game_frame_listener_a8336c78c3c77a54fe406a85cea26188b}{\+\_\+dead\+Label}}
-\item 
 bool \mbox{\hyperlink{class_game_frame_listener_a8a7bacae2593bfdbc71d7af5dc559ae7}{dead}} = false
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Game\+Frame Listener class, for listening to the events that occur each frame. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_game_frame_listener_a8ff619e2059160a8f309b76d43d595d2}\label{class_game_frame_listener_a8ff619e2059160a8f309b76d43d595d2}} 
@@ -50,6 +56,18 @@ bool \mbox{\hyperlink{class_game_frame_listener_a8a7bacae2593bfdbc71d7af5dc559ae
 \doxysubsubsection{\texorpdfstring{frameStarted()}{frameStarted()}}
 {\footnotesize\ttfamily bool Game\+Frame\+Listener\+::frame\+Started (\begin{DoxyParamCaption}\item[{const Ogre\+::\+Frame\+Event \&}]{evt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Used as the update function, calls the update function of the ball, check for the lose condition, update the huds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Ogre\+::\+Frame\+Event\& evt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
@@ -70,12 +88,6 @@ bool \mbox{\hyperlink{class_game_frame_listener_a8a7bacae2593bfdbc71d7af5dc559ae
 \index{\_BatNode@{\_BatNode}!GameFrameListener@{GameFrameListener}}
 \doxysubsubsection{\texorpdfstring{\_BatNode}{\_BatNode}}
 {\footnotesize\ttfamily Ogre\+::\+Scene\+Node$\ast$ Game\+Frame\+Listener\+::\+\_\+\+Bat\+Node\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{class_game_frame_listener_a8336c78c3c77a54fe406a85cea26188b}\label{class_game_frame_listener_a8336c78c3c77a54fe406a85cea26188b}} 
-\index{GameFrameListener@{GameFrameListener}!\_deadLabel@{\_deadLabel}}
-\index{\_deadLabel@{\_deadLabel}!GameFrameListener@{GameFrameListener}}
-\doxysubsubsection{\texorpdfstring{\_deadLabel}{\_deadLabel}}
-{\footnotesize\ttfamily Ogre\+Bites\+::\+Label$\ast$ Game\+Frame\+Listener\+::\+\_\+dead\+Label\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{class_game_frame_listener_ad5e8e3d8dd4b8d5a0dd46533c934906b}\label{class_game_frame_listener_ad5e8e3d8dd4b8d5a0dd46533c934906b}} 
 \index{GameFrameListener@{GameFrameListener}!\_liveLabel@{\_liveLabel}}

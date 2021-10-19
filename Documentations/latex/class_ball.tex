@@ -8,27 +8,31 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_ball_a86a144d3dad6c953e422e32435923bbb}{Ball}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_ball}{Ball}} class -\/ have check\+Collision, check\+Bounds, move functions Creates the shape of the ball \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_ball_a20f2f6ac0bf648f406a8e12e63429fcd}{$\sim$\+Ball}} ()
 \item 
 \mbox{\hyperlink{class_ball}{Ball}} $\ast$ \mbox{\hyperlink{class_ball_a8e0c0005689441a0100d29dc2c7917b5}{get\+Ball}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the current instance of this class. \end{DoxyCompactList}\item 
 Vector3 \mbox{\hyperlink{class_ball_aa5d47b9f851737c20cdc0df5084356be}{get\+Position}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em returns the position of this instance \end{DoxyCompactList}\item 
 Vector3 \mbox{\hyperlink{class_ball_ae25a290c7f7b414b6b6492ff3fb1d3e0}{get\+Scale}} ()
 \item 
+void \mbox{\hyperlink{class_ball_a60e871814dc11a0c01595176cacae349}{check\+Collision}} (Scene\+Node $\ast$bat, Scene\+Node $\ast$ball)
+\begin{DoxyCompactList}\small\item\em Checks to see if the ball is colliding with the bat. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ball_a02f9a6053f3b5faad8cfe707b1aa4557}{move}} (Scene\+Node $\ast$ball, Ogre\+::\+Real time)
+\begin{DoxyCompactList}\small\item\em moves the ball based on time \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ball_a55be23c82ab8f3ad89f3d42fb2968b67}{check\+Bound}} (Scene\+Node $\ast$ball)
+\begin{DoxyCompactList}\small\item\em Checks to see if the ball is colliding with edges. \end{DoxyCompactList}\item 
 Manual\+Object $\ast$ \mbox{\hyperlink{class_ball_a914d9af31e48653ddf9d498c861c1f1f}{get\+Shape}} (Manual\+Object $\ast$obj)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates the circular shape of the object. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_ball_a05e14494b722d7d34dc429cbb59318c7}{get\+XVelocity}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the velocity of the object in X axis. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_ball_a44733c0708d6650a9dab9dcdb39ec91a}{get\+YVelocity}} ()
-\item 
-void \mbox{\hyperlink{class_ball_a23eab824e80a61b78a5290ce7e93addc}{update}} (Scene\+Node $\ast$node)
-\item 
-void \mbox{\hyperlink{class_ball_a4ea07fba4fdb40ebec9f60e293ef19de}{is\+Colliding}} (bool b)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the velocity of the object in Y axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ball_a74dd5825709f495d8abfb6bcb323ead4}{update}} (Scene\+Node $\ast$node, Scene\+Node $\ast$bat, Ogre\+::\+Real time)
+\begin{DoxyCompactList}\small\item\em updates the velocity of object per frame, calls the check\+Collision, check\+Bound and move functions \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_ball_a17797c43548b3671ba9c0c2d24c847fc}{get\+Is\+Colliding}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em If the object is colliding with the bat this function sets the Collide variable to true. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_ball_a4be8735c0be8984a0e7cde8b7f5d4b34}{get\+Lose}} ()
 \item 
 void \mbox{\hyperlink{class_ball_a941a95594e5ec9354302b566223d78db}{set\+Lose}} (bool b)
@@ -46,13 +50,19 @@ float \mbox{\hyperlink{class_ball_a15b57872c201dca88f4ad290338c76e8}{XVelocity}}
 \item 
 float \mbox{\hyperlink{class_ball_af4278a7ea66ce0c3e30dc6fd7bd60821}{YVelocity}}
 \item 
+float \mbox{\hyperlink{class_ball_a86bfb032007c736e06c2295a8070d620}{radius}}
+\item 
+float \mbox{\hyperlink{class_ball_a0c7880c1684810823d1047a8d17ba0eb}{bat\+Width}}
+\item 
+float \mbox{\hyperlink{class_ball_af8708ba2b3930009b54b32bf6e701e5d}{bat\+Height}}
+\item 
 bool \mbox{\hyperlink{class_ball_aa1eb52af0c5db89281e0e923da171e1f}{Collide}}
 \item 
 bool \mbox{\hyperlink{class_ball_a88cfe91bc1d39c44cae465a942f56da4}{Lose}}
 \item 
-float \mbox{\hyperlink{class_ball_a860cf4c6a94a142b4dd64215d1d09a74}{height}}
+float \mbox{\hyperlink{class_ball_a50f2c310895e317e5f063068de43e866}{Screen\+Height}}
 \item 
-float \mbox{\hyperlink{class_ball_a41a2d028190adb651318d87f5253e266}{width}}
+float \mbox{\hyperlink{class_ball_a79aeb24919529f3f6fd23b95f0a845bd}{Screen\+Width}}
 \item 
 float \mbox{\hyperlink{class_ball_ab5aef34384a54bc1927753064c1e0f83}{max\+Speed}}
 \end{DoxyCompactItemize}
@@ -65,6 +75,13 @@ float \mbox{\hyperlink{class_ball_ab5aef34384a54bc1927753064c1e0f83}{max\+Speed}
 \doxysubsubsection{\texorpdfstring{Ball()}{Ball()}}
 {\footnotesize\ttfamily Ball\+::\+Ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+\mbox{\hyperlink{class_ball}{Ball}} class -\/ have check\+Collision, check\+Bounds, move functions Creates the shape of the ball 
+
+Constructor Initializes the class variables \begin{DoxyReturn}{Returns}
+no return 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_ball_a20f2f6ac0bf648f406a8e12e63429fcd}\label{class_ball_a20f2f6ac0bf648f406a8e12e63429fcd}} 
 \index{Ball@{Ball}!````~Ball@{$\sim$Ball}}
 \index{````~Ball@{$\sim$Ball}!Ball@{Ball}}
@@ -74,18 +91,80 @@ float \mbox{\hyperlink{class_ball_ab5aef34384a54bc1927753064c1e0f83}{max\+Speed}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ball_a55be23c82ab8f3ad89f3d42fb2968b67}\label{class_ball_a55be23c82ab8f3ad89f3d42fb2968b67}} 
+\index{Ball@{Ball}!checkBound@{checkBound}}
+\index{checkBound@{checkBound}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{checkBound()}{checkBound()}}
+{\footnotesize\ttfamily void Ball\+::check\+Bound (\begin{DoxyParamCaption}\item[{Scene\+Node $\ast$}]{ball }\end{DoxyParamCaption})}
+
+
+
+Checks to see if the ball is colliding with edges. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Scene\+Node$\ast$} & ball. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ball_a60e871814dc11a0c01595176cacae349}\label{class_ball_a60e871814dc11a0c01595176cacae349}} 
+\index{Ball@{Ball}!checkCollision@{checkCollision}}
+\index{checkCollision@{checkCollision}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{checkCollision()}{checkCollision()}}
+{\footnotesize\ttfamily void Ball\+::check\+Collision (\begin{DoxyParamCaption}\item[{Scene\+Node $\ast$}]{bat,  }\item[{Scene\+Node $\ast$}]{ball }\end{DoxyParamCaption})}
+
+
+
+Checks to see if the ball is colliding with the bat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Scene\+Node$\ast$} & bat. \\
+\hline
+{\em Scene\+Node$\ast$} & ball \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_ball_a8e0c0005689441a0100d29dc2c7917b5}\label{class_ball_a8e0c0005689441a0100d29dc2c7917b5}} 
 \index{Ball@{Ball}!getBall@{getBall}}
 \index{getBall@{getBall}!Ball@{Ball}}
 \doxysubsubsection{\texorpdfstring{getBall()}{getBall()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_ball}{Ball}} $\ast$ Ball\+::get\+Ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Returns the current instance of this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ball$\ast$ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_ball_a17797c43548b3671ba9c0c2d24c847fc}\label{class_ball_a17797c43548b3671ba9c0c2d24c847fc}} 
 \index{Ball@{Ball}!getIsColliding@{getIsColliding}}
 \index{getIsColliding@{getIsColliding}!Ball@{Ball}}
 \doxysubsubsection{\texorpdfstring{getIsColliding()}{getIsColliding()}}
 {\footnotesize\ttfamily bool Ball\+::get\+Is\+Colliding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+If the object is colliding with the bat this function sets the Collide variable to true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_ball_a4be8735c0be8984a0e7cde8b7f5d4b34}\label{class_ball_a4be8735c0be8984a0e7cde8b7f5d4b34}} 
 \index{Ball@{Ball}!getLose@{getLose}}
 \index{getLose@{getLose}!Ball@{Ball}}
@@ -98,6 +177,18 @@ float \mbox{\hyperlink{class_ball_ab5aef34384a54bc1927753064c1e0f83}{max\+Speed}
 \doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
 {\footnotesize\ttfamily Vector3 Ball\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+returns the position of this instance 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector3 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_ball_ae25a290c7f7b414b6b6492ff3fb1d3e0}\label{class_ball_ae25a290c7f7b414b6b6492ff3fb1d3e0}} 
 \index{Ball@{Ball}!getScale@{getScale}}
 \index{getScale@{getScale}!Ball@{Ball}}
@@ -110,36 +201,102 @@ float \mbox{\hyperlink{class_ball_ab5aef34384a54bc1927753064c1e0f83}{max\+Speed}
 \doxysubsubsection{\texorpdfstring{getShape()}{getShape()}}
 {\footnotesize\ttfamily Manual\+Object $\ast$ Ball\+::get\+Shape (\begin{DoxyParamCaption}\item[{Manual\+Object $\ast$}]{obj }\end{DoxyParamCaption})}
 
+
+
+Creates the circular shape of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Manual\+Object$\ast$} & obj \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Manual\+Object$\ast$ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_ball_a05e14494b722d7d34dc429cbb59318c7}\label{class_ball_a05e14494b722d7d34dc429cbb59318c7}} 
 \index{Ball@{Ball}!getXVelocity@{getXVelocity}}
 \index{getXVelocity@{getXVelocity}!Ball@{Ball}}
 \doxysubsubsection{\texorpdfstring{getXVelocity()}{getXVelocity()}}
 {\footnotesize\ttfamily float Ball\+::get\+XVelocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Returns the velocity of the object in X axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_ball_a44733c0708d6650a9dab9dcdb39ec91a}\label{class_ball_a44733c0708d6650a9dab9dcdb39ec91a}} 
 \index{Ball@{Ball}!getYVelocity@{getYVelocity}}
 \index{getYVelocity@{getYVelocity}!Ball@{Ball}}
 \doxysubsubsection{\texorpdfstring{getYVelocity()}{getYVelocity()}}
 {\footnotesize\ttfamily float Ball\+::get\+YVelocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_ball_a4ea07fba4fdb40ebec9f60e293ef19de}\label{class_ball_a4ea07fba4fdb40ebec9f60e293ef19de}} 
-\index{Ball@{Ball}!isColliding@{isColliding}}
-\index{isColliding@{isColliding}!Ball@{Ball}}
-\doxysubsubsection{\texorpdfstring{isColliding()}{isColliding()}}
-{\footnotesize\ttfamily void Ball\+::is\+Colliding (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})}
 
+
+Returns the velocity of the object in Y axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ball_a02f9a6053f3b5faad8cfe707b1aa4557}\label{class_ball_a02f9a6053f3b5faad8cfe707b1aa4557}} 
+\index{Ball@{Ball}!move@{move}}
+\index{move@{move}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Ball\+::move (\begin{DoxyParamCaption}\item[{Scene\+Node $\ast$}]{ball,  }\item[{Ogre\+::\+Real}]{time }\end{DoxyParamCaption})}
+
+
+
+moves the ball based on time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Scene\+Node$\ast$} & ball \\
+\hline
+{\em Ogre\+::\+Real} & time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_ball_a941a95594e5ec9354302b566223d78db}\label{class_ball_a941a95594e5ec9354302b566223d78db}} 
 \index{Ball@{Ball}!setLose@{setLose}}
 \index{setLose@{setLose}!Ball@{Ball}}
 \doxysubsubsection{\texorpdfstring{setLose()}{setLose()}}
 {\footnotesize\ttfamily void Ball\+::set\+Lose (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_ball_a23eab824e80a61b78a5290ce7e93addc}\label{class_ball_a23eab824e80a61b78a5290ce7e93addc}} 
+\mbox{\Hypertarget{class_ball_a74dd5825709f495d8abfb6bcb323ead4}\label{class_ball_a74dd5825709f495d8abfb6bcb323ead4}} 
 \index{Ball@{Ball}!update@{update}}
 \index{update@{update}!Ball@{Ball}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily void Ball\+::update (\begin{DoxyParamCaption}\item[{Scene\+Node $\ast$}]{node }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Ball\+::update (\begin{DoxyParamCaption}\item[{Scene\+Node $\ast$}]{ball,  }\item[{Scene\+Node $\ast$}]{bat,  }\item[{Ogre\+::\+Real}]{time }\end{DoxyParamCaption})}
 
+
+
+updates the velocity of object per frame, calls the check\+Collision, check\+Bound and move functions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Scene\+Node$\ast$} & ball \\
+\hline
+{\em Scene\+Node$\ast$} & bat \\
+\hline
+{\em Ogre\+::\+Real} & time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
@@ -149,17 +306,23 @@ float \mbox{\hyperlink{class_ball_ab5aef34384a54bc1927753064c1e0f83}{max\+Speed}
 \doxysubsubsection{\texorpdfstring{ballShape}{ballShape}}
 {\footnotesize\ttfamily string Ball\+::ball\+Shape\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{class_ball_af8708ba2b3930009b54b32bf6e701e5d}\label{class_ball_af8708ba2b3930009b54b32bf6e701e5d}} 
+\index{Ball@{Ball}!batHeight@{batHeight}}
+\index{batHeight@{batHeight}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{batHeight}{batHeight}}
+{\footnotesize\ttfamily float Ball\+::bat\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_ball_a0c7880c1684810823d1047a8d17ba0eb}\label{class_ball_a0c7880c1684810823d1047a8d17ba0eb}} 
+\index{Ball@{Ball}!batWidth@{batWidth}}
+\index{batWidth@{batWidth}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{batWidth}{batWidth}}
+{\footnotesize\ttfamily float Ball\+::bat\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{class_ball_aa1eb52af0c5db89281e0e923da171e1f}\label{class_ball_aa1eb52af0c5db89281e0e923da171e1f}} 
 \index{Ball@{Ball}!Collide@{Collide}}
 \index{Collide@{Collide}!Ball@{Ball}}
 \doxysubsubsection{\texorpdfstring{Collide}{Collide}}
 {\footnotesize\ttfamily bool Ball\+::\+Collide\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{class_ball_a860cf4c6a94a142b4dd64215d1d09a74}\label{class_ball_a860cf4c6a94a142b4dd64215d1d09a74}} 
-\index{Ball@{Ball}!height@{height}}
-\index{height@{height}!Ball@{Ball}}
-\doxysubsubsection{\texorpdfstring{height}{height}}
-{\footnotesize\ttfamily float Ball\+::height\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{class_ball_a88cfe91bc1d39c44cae465a942f56da4}\label{class_ball_a88cfe91bc1d39c44cae465a942f56da4}} 
 \index{Ball@{Ball}!Lose@{Lose}}
@@ -179,17 +342,29 @@ float \mbox{\hyperlink{class_ball_ab5aef34384a54bc1927753064c1e0f83}{max\+Speed}
 \doxysubsubsection{\texorpdfstring{position}{position}}
 {\footnotesize\ttfamily Vector3 Ball\+::position\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{class_ball_a86bfb032007c736e06c2295a8070d620}\label{class_ball_a86bfb032007c736e06c2295a8070d620}} 
+\index{Ball@{Ball}!radius@{radius}}
+\index{radius@{radius}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{radius}{radius}}
+{\footnotesize\ttfamily float Ball\+::radius\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{class_ball_af1c354f13022e5f6ed07c3e591582a91}\label{class_ball_af1c354f13022e5f6ed07c3e591582a91}} 
 \index{Ball@{Ball}!scale@{scale}}
 \index{scale@{scale}!Ball@{Ball}}
 \doxysubsubsection{\texorpdfstring{scale}{scale}}
 {\footnotesize\ttfamily Vector3 Ball\+::scale\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_ball_a41a2d028190adb651318d87f5253e266}\label{class_ball_a41a2d028190adb651318d87f5253e266}} 
-\index{Ball@{Ball}!width@{width}}
-\index{width@{width}!Ball@{Ball}}
-\doxysubsubsection{\texorpdfstring{width}{width}}
-{\footnotesize\ttfamily float Ball\+::width\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_ball_a50f2c310895e317e5f063068de43e866}\label{class_ball_a50f2c310895e317e5f063068de43e866}} 
+\index{Ball@{Ball}!ScreenHeight@{ScreenHeight}}
+\index{ScreenHeight@{ScreenHeight}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{ScreenHeight}{ScreenHeight}}
+{\footnotesize\ttfamily float Ball\+::\+Screen\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_ball_a79aeb24919529f3f6fd23b95f0a845bd}\label{class_ball_a79aeb24919529f3f6fd23b95f0a845bd}} 
+\index{Ball@{Ball}!ScreenWidth@{ScreenWidth}}
+\index{ScreenWidth@{ScreenWidth}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{ScreenWidth}{ScreenWidth}}
+{\footnotesize\ttfamily float Ball\+::\+Screen\+Width\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{class_ball_a15b57872c201dca88f4ad290338c76e8}\label{class_ball_a15b57872c201dca88f4ad290338c76e8}} 
 \index{Ball@{Ball}!XVelocity@{XVelocity}}

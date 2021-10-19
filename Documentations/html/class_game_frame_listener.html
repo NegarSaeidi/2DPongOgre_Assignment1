@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: GameFrameListener Class Reference</title>
+<title>2D Pong game - Assignment 1 - Negar Saeidi: GameFrameListener Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">2D Pong game - Assignment 1 - Negar Saeidi
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -98,6 +98,9 @@ $(document).ready(function(){initNavTree('class_game_frame_listener.html',''); i
   <div class="headertitle"><div class="title">GameFrameListener Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>GameFrame Listener class, for listening to the events that occur each frame.  
+ <a href="class_game_frame_listener.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GameFrameListener:</div>
 <div class="dyncontent">
@@ -110,6 +113,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8ff619e2059160a8f309b76d43d595d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_frame_listener.html#a8ff619e2059160a8f309b76d43d595d2">GameFrameListener</a> (Ogre::SceneNode *batNode, Ogre::SceneNode *ballNode, <a class="el" href="class_ball.html">Ball</a> *tempBall, OgreBites::Label *Live, OgreBites::Label *sc, OgreBites::Label *time)</td></tr>
 <tr class="separator:a8ff619e2059160a8f309b76d43d595d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79a5435ff5069071435a9a582701a688"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_frame_listener.html#a79a5435ff5069071435a9a582701a688">frameStarted</a> (const Ogre::FrameEvent &amp;evt)</td></tr>
+<tr class="memdesc:a79a5435ff5069071435a9a582701a688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used as the update function, calls the update function of the ball, check for the lose condition, update the huds.  <a href="class_game_frame_listener.html#a79a5435ff5069071435a9a582701a688">More...</a><br /></td></tr>
 <tr class="separator:a79a5435ff5069071435a9a582701a688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -126,12 +130,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ac32f973eff63bc2dc2cf7081f27220ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a181e99eb230af6d5b45ff66ff462ae0e"><td class="memItemLeft" align="right" valign="top">OgreBites::Label *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_frame_listener.html#a181e99eb230af6d5b45ff66ff462ae0e">_timeLabel</a></td></tr>
 <tr class="separator:a181e99eb230af6d5b45ff66ff462ae0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8336c78c3c77a54fe406a85cea26188b"><td class="memItemLeft" align="right" valign="top">OgreBites::Label *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_frame_listener.html#a8336c78c3c77a54fe406a85cea26188b">_deadLabel</a></td></tr>
-<tr class="separator:a8336c78c3c77a54fe406a85cea26188b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a7bacae2593bfdbc71d7af5dc559ae7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_frame_listener.html#a8a7bacae2593bfdbc71d7af5dc559ae7">dead</a> = false</td></tr>
 <tr class="separator:a8a7bacae2593bfdbc71d7af5dc559ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >GameFrame Listener class, for listening to the events that occur each frame. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8ff619e2059160a8f309b76d43d595d2" name="a8ff619e2059160a8f309b76d43d595d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ff619e2059160a8f309b76d43d595d2">&#9670;&nbsp;</a></span>GameFrameListener()</h2>
 
@@ -217,6 +221,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Used as the update function, calls the update function of the ball, check for the lose condition, update the huds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>Ogre::FrameEvent&amp; evt </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -275,28 +288,6 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">Ogre::SceneNode* GameFrameListener::_BatNode</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8336c78c3c77a54fe406a85cea26188b" name="a8336c78c3c77a54fe406a85cea26188b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8336c78c3c77a54fe406a85cea26188b">&#9670;&nbsp;</a></span>_deadLabel</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">OgreBites::Label* GameFrameListener::_deadLabel</td>
         </tr>
       </table>
   </td>

@@ -16,25 +16,28 @@
 \DoxyCodeLine{13     \mbox{\hyperlink{class_ball}{Ball}}* \mbox{\hyperlink{class_ball_a8e0c0005689441a0100d29dc2c7917b5}{getBall}}();}
 \DoxyCodeLine{14     Vector3 \mbox{\hyperlink{class_ball_aa5d47b9f851737c20cdc0df5084356be}{getPosition}}();}
 \DoxyCodeLine{15     Vector3 \mbox{\hyperlink{class_ball_ae25a290c7f7b414b6b6492ff3fb1d3e0}{getScale}}();}
-\DoxyCodeLine{16     ManualObject* \mbox{\hyperlink{class_ball_a914d9af31e48653ddf9d498c861c1f1f}{getShape}}(ManualObject* obj);}
-\DoxyCodeLine{17     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_ball_a05e14494b722d7d34dc429cbb59318c7}{getXVelocity}}();}
-\DoxyCodeLine{18     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_ball_a44733c0708d6650a9dab9dcdb39ec91a}{getYVelocity}}();}
-\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ball_a23eab824e80a61b78a5290ce7e93addc}{update}}(SceneNode* node);}
-\DoxyCodeLine{20     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ball_a4ea07fba4fdb40ebec9f60e293ef19de}{isColliding}}(\textcolor{keywordtype}{bool} b);}
-\DoxyCodeLine{21     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_ball_a17797c43548b3671ba9c0c2d24c847fc}{getIsColliding}}();}
-\DoxyCodeLine{22     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_ball_a4be8735c0be8984a0e7cde8b7f5d4b34}{getLose}}();}
-\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ball_a941a95594e5ec9354302b566223d78db}{setLose}}(\textcolor{keywordtype}{bool} b);}
-\DoxyCodeLine{24 \textcolor{keyword}{private}:}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_ball_a9022c8f2dd7caca53ab33df65da1bd85}{ballShape}};}
-\DoxyCodeLine{27     Vector3 \mbox{\hyperlink{class_ball_a4c4fdea5f5004cd0cd30cb93194091e7}{position}}, \mbox{\hyperlink{class_ball_af1c354f13022e5f6ed07c3e591582a91}{scale}};}
-\DoxyCodeLine{28     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_ball_a15b57872c201dca88f4ad290338c76e8}{XVelocity}};}
-\DoxyCodeLine{29     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_ball_af4278a7ea66ce0c3e30dc6fd7bd60821}{YVelocity}};}
-\DoxyCodeLine{30     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_ball_aa1eb52af0c5db89281e0e923da171e1f}{Collide}},\mbox{\hyperlink{class_ball_a88cfe91bc1d39c44cae465a942f56da4}{Lose}};}
-\DoxyCodeLine{31     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_ball_a860cf4c6a94a142b4dd64215d1d09a74}{height}}, \mbox{\hyperlink{class_ball_a41a2d028190adb651318d87f5253e266}{width}},\mbox{\hyperlink{class_ball_ab5aef34384a54bc1927753064c1e0f83}{maxSpeed}};}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34 \};}
-\DoxyCodeLine{35 }
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ball_a60e871814dc11a0c01595176cacae349}{checkCollision}}(SceneNode* bat, SceneNode* ball);}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ball_a02f9a6053f3b5faad8cfe707b1aa4557}{move}}(SceneNode* ball, Ogre::Real time);}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ball_a55be23c82ab8f3ad89f3d42fb2968b67}{checkBound}}(SceneNode* ball);}
+\DoxyCodeLine{19     ManualObject* \mbox{\hyperlink{class_ball_a914d9af31e48653ddf9d498c861c1f1f}{getShape}}(ManualObject* obj);}
+\DoxyCodeLine{20     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_ball_a05e14494b722d7d34dc429cbb59318c7}{getXVelocity}}();}
+\DoxyCodeLine{21     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_ball_a44733c0708d6650a9dab9dcdb39ec91a}{getYVelocity}}();}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ball_a74dd5825709f495d8abfb6bcb323ead4}{update}}(SceneNode* node, SceneNode* bat, Ogre::Real time);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_ball_a17797c43548b3671ba9c0c2d24c847fc}{getIsColliding}}();}
+\DoxyCodeLine{25     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_ball_a4be8735c0be8984a0e7cde8b7f5d4b34}{getLose}}();}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ball_a941a95594e5ec9354302b566223d78db}{setLose}}(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{27 \textcolor{keyword}{private}:}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_ball_a9022c8f2dd7caca53ab33df65da1bd85}{ballShape}};}
+\DoxyCodeLine{30     Vector3 \mbox{\hyperlink{class_ball_a4c4fdea5f5004cd0cd30cb93194091e7}{position}}, \mbox{\hyperlink{class_ball_af1c354f13022e5f6ed07c3e591582a91}{scale}};}
+\DoxyCodeLine{31     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_ball_a15b57872c201dca88f4ad290338c76e8}{XVelocity}};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_ball_af4278a7ea66ce0c3e30dc6fd7bd60821}{YVelocity}};}
+\DoxyCodeLine{33     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_ball_a86bfb032007c736e06c2295a8070d620}{radius}},\mbox{\hyperlink{class_ball_a0c7880c1684810823d1047a8d17ba0eb}{batWidth}},\mbox{\hyperlink{class_ball_af8708ba2b3930009b54b32bf6e701e5d}{batHeight}};}
+\DoxyCodeLine{34     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_ball_aa1eb52af0c5db89281e0e923da171e1f}{Collide}}, \mbox{\hyperlink{class_ball_a88cfe91bc1d39c44cae465a942f56da4}{Lose}};}
+\DoxyCodeLine{35     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_ball_a50f2c310895e317e5f063068de43e866}{ScreenHeight}}, \mbox{\hyperlink{class_ball_a79aeb24919529f3f6fd23b95f0a845bd}{ScreenWidth}}, \mbox{\hyperlink{class_ball_ab5aef34384a54bc1927753064c1e0f83}{maxSpeed}};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \};}
 
 \end{DoxyCode}

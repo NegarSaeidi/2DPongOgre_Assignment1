@@ -26,12 +26,9 @@ using namespace OgreBites;
 Ogre::Vector3 translate(0, 0, 0);
 int scoreNumber = 0;
 int livesnumber = 3;
-
-
-//GameFrameListener class
 /**
-* Works as the update function
-*/
+ * GameFrame Listener class, for listening to the events that occur each frame
+ */
 class GameFrameListener : public Ogre::FrameListener
 {
 private:
@@ -41,7 +38,6 @@ private:
     OgreBites::Label* _liveLabel;
     OgreBites::Label* _scLabel;
     OgreBites::Label* _timeLabel;
-    OgreBites::Label* _deadLabel;
     bool dead = false;
 
 public:
@@ -54,19 +50,23 @@ public:
         _liveLabel = Live;
         _scLabel = sc;
         _timeLabel = time;
-        
+
+
 
     }
-    //Used as the update function
+    
+ /**
+ * Used as the update function, calls the update function of the ball, check for the lose condition, update the huds
+ * @param const Ogre::FrameEvent& evt
+ * @return bool
+ */
     bool frameStarted(const Ogre::FrameEvent& evt)
     {
-        const auto& batCollider = _BatNode->_getWorldAABB();
-        const auto& ballCollider = _BallNode->_getWorldAABB();
-
-        _timeLabel->setCaption(Ogre::StringConverter::toString(evt.timeSinceLastFrame));
+       
+        _timeLabel->setCaption(Ogre::StringConverter::toString(evt.timeSinceLastFrame*1000));
         if (!dead)
         {
-            _ballInstance->update(_BallNode);
+            _ballInstance->update(_BallNode, _BatNode, evt.timeSinceLastFrame);
             if (_ballInstance->getLose())
             {
                 _ballInstance->setLose(false);
@@ -75,138 +75,106 @@ public:
                 {
                     livesnumber--;
 
-                    _BallNode->setPosition(10, 115, 0);
+                    _BallNode->setPosition(10, 100, 0);
                     _liveLabel->setCaption(Ogre::StringConverter::toString(livesnumber));
                 }
                 else
                 {
                     dead = true;
                     _liveLabel->setCaption(Ogre::StringConverter::toString(0));
-                   // _deadLabel->show();
+
                 }
 
             }
-       
-         
-           
-           if((ballCollider.getMaximum().x<= batCollider.getMaximum().x)&&
-               (ballCollider.getMinimum().x >= batCollider.getMinimum().x) &&
-               (ballCollider.getMaximum().y >= batCollider.getMaximum().y) &&
-               (ballCollider.getMinimum().y <= batCollider.getMaximum().y))
-               
-            {
-               if (!_ballInstance->getIsColliding())
-               {
-                
-                   _ballInstance->isColliding(true);
 
-                   scoreNumber++;
-                   _scLabel->setCaption(Ogre::StringConverter::toString(scoreNumber));
-               }
+            if (_ballInstance->getIsColliding())
+            {
+
+                scoreNumber++;
+                _scLabel->setCaption(Ogre::StringConverter::toString(scoreNumber));
 
             }
-           else
-           {
-             
-              
-               _ballInstance->isColliding(false);
-           }
-            translate.x = _ballInstance->getXVelocity();
-
-            translate.y = _ballInstance->getYVelocity();
-          
 
 
-          
-            _BallNode->translate(translate * evt.timeSinceLastFrame);
+
+
+
+
 
         }
         return true;
     }
 };
 
-
+/**
+ * Constuctor, sets up a commmon context for application
+ * @return no return
+ */
 Game::Game()
     : ApplicationContext("NegarSaeidi-101261396")
 {
 }
 
 
-
+/**
+ * In this function, scene elements get created, like lights , camera, trayManager, hud...
+ * @param None
+ * @return void
+ */
 
 void Game::setup()
 {
-    
-    ApplicationContext::setup();
-    getRenderWindow()->resize(1000,500 );
-    addInputListener(this);
 
-   
+    ApplicationContext::setup();
+    getRenderWindow()->resize(1000, 500);
+    addInputListener(this);
     Root* root = getRoot();
     SceneManager* scnMgr = root->createSceneManager();
-
-   
     RTShader::ShaderGenerator* shadergen = RTShader::ShaderGenerator::getSingletonPtr();
     shadergen->addSceneManager(scnMgr);
 
 
-
-    
+    //Light
     scnMgr->setAmbientLight(ColourValue(0.5, 0.5, 0.5));
-    
-    //light
-   
     Light* light = scnMgr->createLight("MainLight");
     SceneNode* lightNode = scnMgr->getRootSceneNode()->createChildSceneNode();
     lightNode->attachObject(light);
-  
-
-  
     lightNode->setPosition(20, 80, 50);
-    //Create camera
-   
-    SceneNode* camNode = scnMgr->getRootSceneNode()->createChildSceneNode();
 
-   
+    //Create camera
+    SceneNode* camNode = scnMgr->getRootSceneNode()->createChildSceneNode();
     Camera* cam = scnMgr->createCamera("myCam");
-    cam->setNearClipDistance(5); 
+    cam->setNearClipDistance(5);
     cam->setAutoAspectRatio(true);
     camNode->attachObject(cam);
     camNode->setPosition(0, 0, 140);
 
-   
+
     getRenderWindow()->addViewport(cam);
-   
+
     getRenderWindow()->getViewport(0)->setBackgroundColour(ColourValue(0.8f, 0.8f, 0.0f, 1.0f));
     windowHeight = getRenderWindow()->getHeight();
     windowWidth = getRenderWindow()->getWidth();
-    
-   
+
+
     camNode->setPosition(0, 47, 222);
-  
+
 
     OgreBites::TrayManager* mTrayMgr = new OgreBites::TrayManager("HUD", getRenderWindow());
 
-   
+
     scnMgr->addRenderQueueListener(mOverlaySystem);
-   
-  
+
+
 
     //TrayManager
     addInputListener(mTrayMgr);
     mTrayMgr->showFrameStats(TL_BOTTOMLEFT);
     mTrayMgr->toggleAdvancedFrameStats();
- 
-   
-
-
 
     // HUD
-   
-  
 
-   
-    mTpuLabel = mTrayMgr->createLabel(TL_TOPRIGHT, "Time/Update", "Time/Update:", 150);
+    mTpuLabel = mTrayMgr->createLabel(TL_TOPRIGHT, "Time/Update", "Time/Update(ms):", 150);
     mTpu = mTrayMgr->createLabel(TL_TOPRIGHT, "tpu", "0", 150);
 
     mScoreLabel = mTrayMgr->createLabel(TL_TOPLEFT, "Score", "Score:", 150);
@@ -224,6 +192,7 @@ void Game::setup()
     BallNode = scnMgr->getRootSceneNode()->createChildSceneNode("BallNode");
     BallNode->setPosition(ball->getPosition());
     BallNode->attachObject(circle);
+    
 
     //Bat
     bat = new Bat();
@@ -240,19 +209,28 @@ void Game::setup()
     createFrameListener();
 
 }
+/**
+ * This function creates a new game frame listener instance and adds it to the scene root.
+ * @param None
+ * @return void
+ */
 void Game::createFrameListener()
 {
-    Ogre::FrameListener* FrameListener = new GameFrameListener(batNode, BallNode, ball, mLives, mScore,mTpu);
+    Ogre::FrameListener* FrameListener = new GameFrameListener(batNode, BallNode, ball, mLives, mScore, mTpu);
     mRoot->addFrameListener(FrameListener);
 
 }
 
 
-//Input 
-//handling A and D keys pressed
+
+/**
+ * keyboard event handler, handling A and D keys
+ * @param const KeyboardEvent& evt
+ * @return bool
+ */
 bool Game::keyPressed(const KeyboardEvent& evt)
 {
-   
+
     switch (evt.keysym.sym)
     {
     case SDLK_ESCAPE:
@@ -264,7 +242,7 @@ bool Game::keyPressed(const KeyboardEvent& evt)
             bat->moveLeft(batNode);
         break;
     case 'd':
-        if (batNode->getPosition().x +42 < 122)
+        if (batNode->getPosition().x + 40 < 122)
             bat->moveRight(batNode);
         break;
 
@@ -278,7 +256,11 @@ bool Game::keyPressed(const KeyboardEvent& evt)
 
 
 
-//Start point
+/**
+ * Startting point of the application, creates an instance of the game class, initializes it and starts rendering it
+ * @param int argc, char** argv
+ * @return int
+ */
 int main(int argc, char** argv)
 {
     try
@@ -298,5 +280,4 @@ int main(int argc, char** argv)
 }
 
 //! [fullsource]
-
 
